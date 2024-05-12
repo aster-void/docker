@@ -1,0 +1,9 @@
+FROM node:alpine
+WORKDIR /usr/docker/uplace/
+COPY . .
+RUN npm ci
+RUN npx prisma generate
+RUN npm run build
+EXPOSE 3200
+# CMD npx prisma db push && npm run serve
+CMD sleep 100000
