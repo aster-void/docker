@@ -21,6 +21,7 @@ to run this, you need to:
 - edit docker-compose.yml to fit your package,
     or copy corresponding part of it (under postgresql:) to your project's compose.yml
 - copy ./postgresql/ to the project's directory
+- if your project doesn't have a Dockerfile, copy Dockerfile.sample to your project and edit it to fit your project.
 - delete run.sh (not necessary)
 
 to start docker compose, run this at the root dir of your app
