@@ -1,7 +1,7 @@
 # DATABASE_URL=postgres://postgres:password@psql:5432/database
 services:
   your-app: # change this to fit your app's name
-    restart: always
+    restart: always # kill it and let it start again to test db
     build:
       context: .
       dockerfile: ./Dockerfile
@@ -9,9 +9,9 @@ services:
       - "3000:3000"
     depends_on: 
       - psql
-  postgresql:
+  psql:
     build:
-      context: ./psql
+      context: ./postgresql
       dockerfile: ./Dockerfile
     environment:
       - POSTGRES_PASSWORD=password
