@@ -1,4 +1,4 @@
-# DATABASE_URL=postgres://postgres:password@psql:5432/database
+# DATABASE_URL=postgres://user:password@psql:5432/database
 services:
   your-app: # change this to fit your app's name
     restart: always # kill it and let it start again to test db
@@ -10,10 +10,8 @@ services:
     depends_on: 
       - psql
   psql:
-    build:
-      context: ./postgresql
-      dockerfile: ./Dockerfile
+    image: postgres:alpine
     environment:
       - POSTGRES_PASSWORD=password
-      - POSTGRES_USER=postgres
+      - POSTGRES_USER=user
       - POSTGRES_DB=database
