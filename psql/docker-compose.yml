@@ -8,10 +8,15 @@ services:
     ports:
       - "3000:3000"
     depends_on: 
-      - psql
-  psql:
+      postgres:
+        condition: service_healthy
+  postgres:
     image: postgres:alpine
     environment:
       - POSTGRES_PASSWORD=password
       - POSTGRES_USER=user
       - POSTGRES_DB=database
+    healthcheck:
+      test: "pg_isready -U user -d database"
+      interval: 5s
+      retries: 3
