@@ -15,12 +15,11 @@ to run this, just execute
 ## Docker Compose
 
 this docker-compose.yml will work as part of your app's compose.yml (and template if yours don't have one)
-this will make a psql accessible at postgresql:5432.
+this will make a postgres accessible at postgres:5432.
 
 to run this, you need to:
 - edit docker-compose.yml to fit your package,
-    or copy corresponding part of it (under postgresql:) to your project's compose.yml
-- copy ./postgresql/ to the project's directory
+    or copy corresponding part of it (under postgres:) to your project's compose.yml
 - copy Dockerfile.sample to your project and edit it to fit your project. (skip if yours already have one)
 - delete run.sh (not necessary)
 
