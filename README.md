@@ -8,4 +8,4 @@ after running many docker images / templates / composes, don't forget to run
 docker system prune
 ```
 
-. this will literally save your disk.
+(optionally with `-a` flag). this will literally save your disk.
